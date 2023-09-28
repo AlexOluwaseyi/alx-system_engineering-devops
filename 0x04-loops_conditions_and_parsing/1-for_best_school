@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# This shell script print Best School 10 times
+# Using for loop
+
+for _ in $(seq 10); do
+	echo "Best School"
+done
