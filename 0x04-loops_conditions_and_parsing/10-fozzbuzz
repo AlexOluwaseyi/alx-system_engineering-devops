@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# The popular fizzbuzz in shell
+# Prints Fizzbuzz if number is divisible by 15
+# Or Fizz and Buzz if number is divisible by 3 and 5 respectively
+
+number=1
+
+while [ $number -le 100 ]; do
+	if (( number%15 == 0 )); then
+		echo "FizzBuzz"
+	elif (( number%5 == 0 )); then
+		echo "Buzz"
+	elif (( number%3 == 0 )); then
+		echo "Fizz"
+	else
+		echo $number
+	fi
+	number=$((number + 1 ))
+done
