@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Sends SIGKILL signals to process without calling KILL or KILLALL
+# Uses pkill
+
+pkill -f 7-highlander
