@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# 2. Port listening on localhost
+# Write a Bash script that listens on port 98 on localhost.
+
+nc -l 98
