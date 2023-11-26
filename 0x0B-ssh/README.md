@@ -9,11 +9,11 @@ You can access your server information in the my servers section of the intranet
 Note: Your server is configured with an Ubuntu 20.04 LTS environment.
 
 ### Tasks
-[x] - 0. Use a private key
-[x] - 1. Create an SSH key pair
-[x] - 2. Client configuration file
-[ ] - 3. Let me in!
-[ ] - 4. Client configuration file (w/ Puppet)
+- [x] 0. Use a private key
+- [x] 1. Create an SSH key pair
+- [x] 2. Client configuration file
+- [x] 3. Let me in!
+- [x] 4. Client configuration file (w/ Puppet)
 
 #### 0. Use a private key
 Write a Bash script that uses ssh to connect to your server using the private key ~/.ssh/school with the user ubuntu.
