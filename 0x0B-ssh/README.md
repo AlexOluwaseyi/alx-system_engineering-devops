@@ -9,13 +9,13 @@ You can access your server information in the my servers section of the intranet
 Note: Your server is configured with an Ubuntu 20.04 LTS environment.
 
 ### Tasks
-- [x] 0. Use a private key
-- [x] 1. Create an SSH key pair
-- [x] 2. Client configuration file
+- [x] 0. [Use a private key](https://github.com/AlexOluwaseyi/alx-system_engineering-devops/blob/master/0x0B-ssh/0-use_a_private_key)
+- [x] 1. [Create an SSH key pair](https://github.com/AlexOluwaseyi/alx-system_engineering-devops/blob/master/0x0B-ssh/1-create_ssh_key_pair)
+- [x] 2. [Client configuration file](https://github.com/AlexOluwaseyi/alx-system_engineering-devops/blob/master/0x0B-ssh/2-ssh_config)
 - [x] 3. Let me in!
-- [x] 4. Client configuration file (w/ Puppet)
+- [x] 4. [Client configuration file (w/ Puppet)](https://github.com/AlexOluwaseyi/alx-system_engineering-devops/blob/master/0x0B-ssh/100-puppet_ssh_config.pp)
 
-#### 0. Use a private key
+#### [0. Use a private key](https://github.com/AlexOluwaseyi/alx-system_engineering-devops/blob/master/0x0B-ssh/0-use_a_private_key)
 Write a Bash script that uses ssh to connect to your server using the private key ~/.ssh/school with the user ubuntu.
 
 Requirements:
@@ -24,7 +24,7 @@ Only use ssh single-character flags
 You cannot use -l
 You do not need to handle the case of a private key protected by a passphrase
 
-#### 1. Create an SSH key pair
+#### [1. Create an SSH key pair](https://github.com/AlexOluwaseyi/alx-system_engineering-devops/blob/master/0x0B-ssh/1-create_ssh_key_pair)
 Write a Bash script that creates an RSA key pair.
 
 Requirements:
@@ -33,7 +33,7 @@ Name of the created private key must be school
 Number of bits in the created key to be created 4096
 The created key must be protected by the passphrase betty
 
-#### 2. Client configuration file
+#### [2. Client configuration file](https://github.com/AlexOluwaseyi/alx-system_engineering-devops/blob/master/0x0B-ssh/2-ssh_config)
 Your machine has an SSH configuration file for the local SSH client, let’s configure it to our needs so that you can connect to a server without typing a password. Share your SSH client configuration in your answer file.
 
 Requirements:
@@ -46,7 +46,7 @@ Now that you have successfully connected to your server, we would also like to j
 
 Add the given SSH public key below to your server so that we can connect using the ubuntu user.
 
-#### 4. Client configuration file (w/ Puppet)
+#### [4. Client configuration file (w/ Puppet)](https://github.com/AlexOluwaseyi/alx-system_engineering-devops/blob/master/0x0B-ssh/100-puppet_ssh_config.pp)
 Let’s practice using Puppet to make changes to our configuration file. Just as in the previous configuration file task, we’d like you to set up your client SSH configuration file so that you can connect to a server without typing a password.
 
 Requirements:
