@@ -39,7 +39,7 @@ echo "server {
    }
 }" > default
 
-sudo mv -f default /etc/nginx/sites-enabled/default
+sudo mv -f default /etc/nginx/sites-available/default
 
 
 # Restart Nginx services
