@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-# run apache on designated container
-
-echo "0.0.0.0 localhost" >> /etc/hosts
+# Debug issue with container
+echo "0.0.0.0 localhost" >>/etc/hosts
 service apache2 start
