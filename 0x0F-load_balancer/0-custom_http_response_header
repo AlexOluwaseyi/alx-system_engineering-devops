@@ -15,6 +15,9 @@ echo "Adding custom header configuration to Nginx..."
 
 custom_header_config="\tadd_header X-Served-By \$hostname;"
 
+# Stop nginx service before making changes
+sudo service nginx stop
+
 # Insert the custom header configuration after the listen directives
 sudo sed -i "/^ *listen \[::\]:80 default_server;/ { s|$|\\n$custom_header_config|; }" /etc/nginx/sites-enabled/default
 
