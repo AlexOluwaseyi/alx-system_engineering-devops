@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+# Configure Nginx so that its HTTP response contains a custom header
+# The name of the custom HTTP header must be X-Served-By
+# The value of the custom HTTP header must be the hostname of the server Nginx is running on
+
+# Installing Nginx on server
+sudo apt-get -y update
+sudo apt-get -y install nginx
+
+# Allow Nginx through the firewall
+sudo ufw allow 'Nginx HTTP'
+
+# Add the custom header configuration
+echo "Adding custom header configuration to Nginx..."
+
+custom_header_config="\tadd_header X-Served-By \$hostname;"
+
+# Insert the custom header configuration after the listen directives
+sudo sed -i "/^ *listen \[::\]:80 default_server;/ { s|$|\\n$custom_header_config|; }" /etc/nginx/sites-enabled/default
+
+echo "Custom header configuration added successfully."
+
+# Restart Nginx to apply changes
+echo "Restarting Nginx..."
+sudo service nginx restart
+
+echo "Script execution complete."
