@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# A script to configure HAproxy on load balancer server
 
 # Install HAProxy
 sudo apt-get -y install --no-install-recommends software-properties-common
