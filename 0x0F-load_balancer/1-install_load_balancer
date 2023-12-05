@@ -4,15 +4,17 @@
 # Install HAProxy
 sudo apt-get -y install --no-install-recommends software-properties-common
 sudo add-apt-repository -y ppa:vbernat/haproxy-2.8
+sudo apt-get -y update
 sudo apt-get -y install haproxy=2.8.\*
 
 
 # Configure HAProxy
 # Define the frontend and backend configuration
-#frontend_config="frontend web\n\tbind *:80\n\tdefault_backend servers"
-#backend_config="backend servers\n\tbalance roundrobin\n\tserver 289442-web-01 18.204.13.162:80 check\n\tserver 289442-web-02 100.25.134.87:80 check"
-frontend_config="listen load_balancer\n\tbind *:80\n\tbalance roundrobin\n\tmode http\n\toption httpclose\n\toption forwardfor"
-backend_config="\n\tserver 289442-web-01 18.204.13.162:80 check\n\tserver 289442-web-02 100.25.134.87:80 check"
+frontend_config="frontend web\n\tbind *:80\n\tmode http\n\tdefault_backend servers"
+backend_config="backend servers\n\tbalance roundrobin\n\tserver 289442-web-01 18.204.13.162:80 check\n\tserver 289442-web-02 100.25.134.87:80 check"
+
+#frontend_config="listen load_balancer\n\tbind *:80\n\tbalance roundrobin\n\tmode http\n\toption httpclose\n\toption forwardfor"
+#backend_config="\n\tserver 289442-web-01 18.204.13.162:80 check\n\tserver 289442-web-02 100.25.134.87:80 check"
 
 
 # Stop HAProxy service before making changes to haproxy.cfg
