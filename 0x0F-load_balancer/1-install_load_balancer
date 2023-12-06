@@ -2,10 +2,12 @@
 # A script to configure HAproxy on load balancer server
 
 # Install HAProxy
-sudo apt-get -y install --no-install-recommends software-properties-common
-sudo add-apt-repository -y ppa:vbernat/haproxy-2.8
+#sudo apt-get -y install --no-install-recommends software-properties-common
+#sudo add-apt-repository -y ppa:vbernat/haproxy-2.8
 sudo apt-get -y update
-sudo apt-get -y install haproxy=2.8.\*
+sudo apt-get -y upgrade
+sudo apt-get -y install haproxy
+#sudo apt-get -y install haproxy=2.8.\*
 
 
 # Configure HAProxy
