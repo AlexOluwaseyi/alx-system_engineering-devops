@@ -8,12 +8,12 @@ exec { 'update_server':
 }
 
 -> package { 'nginx':
-    ensure   => present,
+    ensure   => 'present',
     provider => 'apt'
 }
 
 -> file_line { 'custom_header':
-    ensure =>
+    ensure => 'present',
     path   => '/etc/nginx/sites-enabled/defaul',
     after  => 'listen [::]:80 default_server;',
     line   => 'add_header X-Served-By $hostname;'
@@ -22,5 +22,5 @@ exec { 'update_server':
 -> exec { 'restart_nginx':
     path    => '/usr/bin',
     command => 'sudo service nginx restart',
-    require => [Package'nginx'], File_line['custom_header']]
+    require => [Package['nginx'], File_line['custom_header']]
 }
