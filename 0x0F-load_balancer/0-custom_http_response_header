@@ -31,7 +31,8 @@ custom_header_config="\tadd_header X-Served-By \$hostname;"
 sudo service nginx stop
 
 # Insert the custom header configuration after the listen directives
-sudo sed -i "/^ *listen \[::\]:80 default_server;/ { s|$|\\n$custom_header_config|; }" /etc/nginx/sites-available/default
+#sudo sed -i "/^ *listen \[::\]:80 default_server;/ { s|$|\\n$custom_header_config|; }" /etc/nginx/sites-available/default
+sudo sed -i "/listen \[::\]:80 default_server;/a \\\tadd_header X-Served-By $HOSTNAME;" /etc/nginx/sites-available/default
 
 # Restart Nginx to apply changes
 sudo service nginx restart
