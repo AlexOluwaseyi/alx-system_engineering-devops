@@ -4,4 +4,4 @@
 ### Tasks
 - [x] 0. World wide web
 - [x] 1. HAproxy SSL termination
-- [ ] 2. No loophole in your website traffic
+- [x] 2. No loophole in your website traffic
