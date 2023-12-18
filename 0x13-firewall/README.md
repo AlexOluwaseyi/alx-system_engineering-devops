@@ -6,5 +6,5 @@ Be very careful with firewall rules! For instance, if you ever deny port 22/TCP 
 
 ### Tasks
 - [x] 0. Block all incoming traffic but
-- [ ] 1. Port forwarding
+- [x] 1. Port forwarding
 
