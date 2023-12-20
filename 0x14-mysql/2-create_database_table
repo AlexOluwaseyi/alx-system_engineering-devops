@@ -1,0 +1,28 @@
+-- Create database and Table
+
+-- Open MySQL
+sudo mysql
+
+-- Create the database
+CREATE DATABASE tyrell_corp;
+
+-- Switch to the tyrell_corp database
+USE tyrell_corp;
+
+-- Create the nexus6 table
+CREATE TABLE nexus6 (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255),
+	);
+
+-- Insert an entry into the nexus6 table
+INSERT INTO nexus6 (name) VALUES ('Leon');
+
+-- Grant SELECT permission to holberton_user on the nexus6 table
+GRANT SELECT ON tyrell_corp.nexus6 TO 'holberton_user'@'localhost';
+
+-- Flush privileges to apply changes
+FLUSH PRIVILEGES;
+
+-- Log out of MySQL
+exit;

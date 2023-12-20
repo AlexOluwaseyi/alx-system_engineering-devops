@@ -1,0 +1,19 @@
+-- Create a replica user
+
+-- Open MySQL
+sudo mysql
+
+-- Create the replica_user
+CREATE USER 'replica_user'@'%' IDENTIFIED BY 'your_password';
+
+-- Grant replication permissions to the replica_user
+GRANT REPLICATION SLAVE ON *.* TO 'replica_user'@'%';
+
+-- Grant SELECT privileges on mysql.user to holberton_user
+GRANT SELECT ON mysql.user TO 'holberton_user'@'localhost';
+
+-- Flush privileges to apply changes
+FLUSH PRIVILEGES;
+
+-- Log out of MySQL
+exit;
