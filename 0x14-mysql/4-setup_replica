@@ -1,0 +1,30 @@
+-- Setup replica dB on web-02
+
+-- Create database and table
+CREATE DATABASE tyrell_corp;
+USE tyrell_corp;
+CREATE TABLE nexus6 (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255)
+	);
+
+-- Insert an entry into the nexus6 table
+INSERT INTO nexus6 (name) VALUES ('Leon');
+
+-- STOP SLAVE
+STOP SLAVE;
+
+-- Connect to master dB (https://dev.mysql.com/doc/refman/5.7/en/change-master-to.html)
+CHANGE MASTER TO
+	MASTER_HOST='host_name',
+	MASTER_USER='user_name',
+	MASTER_PASSWORD='password',
+	MASTER_LOG_FILE='source_log_name',
+	MASTER_LOG_POS=source_log_pos;
+
+-- START SLAVE
+START SLAVE;
+
+-- Check status of Slave
+show slave status\G
+
