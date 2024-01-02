@@ -10,6 +10,6 @@ This is a perfect example of a task that is not suited for Bash scripting, so le
 
 ### Tasks
 - [x] 0. Gather data from an API
-- [ ] 1. Export to CSV
-- [ ] 2. Export to JSON
+- [x] 1. Export to CSV
+- [x] 2. Export to JSON
 - [ ] 3. Dictionary of list of dictionaries
