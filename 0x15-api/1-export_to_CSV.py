@@ -29,24 +29,22 @@ def export_csv():
         users = response.json()
         for user in users:
             if user['id'] == int(sys.argv[1]):
+                user_id = user['id']
                 username = user['username']
 
     # Get Todos status
     response = requests.get("{}/{}/todos".format(user_url, sys.argv[1]))
     if response.status_code == 200:
         todos = response.json()
-        total_todos = len(todos)
-        completed_todos = [todo for todo in todos if todo['completed']]
-        total_completed = len(completed_todos)
 
     csv_data = [
-            [user['id'], username, todo['completed'], todo['title']]
+            [user_id, username, todo['completed'], todo['title']]
             for todo in todos
-            ]      
+            ]
 
     # Write CSV
     with open('USER_ID.csv', 'w', newline='') as csvfile:
-        csvwriter = csv.writer(csvfile)
+        csvwriter = csv.writer(csvfile, quoting=csv.QUOTE_ALL)
         csvwriter.writerows(csv_data)
 
 
