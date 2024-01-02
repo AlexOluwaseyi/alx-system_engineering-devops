@@ -41,7 +41,7 @@ def get_todos():
     # Extract titles from completed todos
     completed_titles = [todo['title'] for todo in completed_todos]
 
-    print("Employee {} is done with tasks({}/{})".format(
+    print("Employee {} is done with tasks({}/{}):".format(
         employee_name, total_completed, total_todos
         ))
     for title in completed_titles:
