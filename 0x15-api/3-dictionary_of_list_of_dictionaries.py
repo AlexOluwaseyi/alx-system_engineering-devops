@@ -43,7 +43,7 @@ def export_dict():
 
                 # Write each to the empty dictionary for every user in users
                 full_dict[user_id] = to_dict
-                print(full_dict)
+
 
     # Write dict to JSON file
     with open("todo_all_employees.json", 'w') as json_file:
