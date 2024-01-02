@@ -42,13 +42,12 @@ def export_csv():
     csv_data = [
             [user['id'], username, todo['completed'], todo['title']]
             for todo in todos
-            ]       
-    
+            ]      
+
     # Write CSV
     with open('USER_ID.csv', 'w', newline='') as csvfile:
         csvwriter = csv.writer(csvfile)
-        for todo in todos:
-            csvwriter.writerows(csv_data)
+        csvwriter.writerows(csv_data)
 
 
 if __name__ == "__main__":
