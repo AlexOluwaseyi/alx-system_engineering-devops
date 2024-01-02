@@ -43,7 +43,8 @@ def export_csv():
             ]
 
     # Write CSV
-    with open('USER_ID.csv', 'w', newline='') as csvfile:
+    filename = str(user_id) + ".csv"
+    with open(filename, 'w', newline='') as csvfile:
         csvwriter = csv.writer(csvfile, quoting=csv.QUOTE_ALL)
         csvwriter.writerows(csv_data)
 
