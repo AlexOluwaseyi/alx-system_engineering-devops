@@ -12,4 +12,4 @@ This is a perfect example of a task that is not suited for Bash scripting, so le
 - [x] 0. Gather data from an API
 - [x] 1. Export to CSV
 - [x] 2. Export to JSON
-- [ ] 3. Dictionary of list of dictionaries
+- [x] 3. Dictionary of list of dictionaries
