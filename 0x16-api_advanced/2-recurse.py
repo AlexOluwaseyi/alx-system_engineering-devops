@@ -30,7 +30,8 @@ def recurse(subreddit, hot_list=None, after=None):
     headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'}
 
     # Make the request to the Reddit API
-    response = requests.get(url, params=params, headers=headers, allow_redirects=False)
+    response = requests.get(url, params=params,
+                            headers=headers, allow_redirects=False)
 
     # Check if the request was successful (status code 200)
     if response.status_code == 200:
@@ -47,7 +48,7 @@ def recurse(subreddit, hot_list=None, after=None):
         if after is not None:
             # Recursive call with the updated after parameter
             return recurse(subreddit, hot_list, after)
-            
+
         else:
             # Base case: no more pages, return the hot_list
             return hot_list
