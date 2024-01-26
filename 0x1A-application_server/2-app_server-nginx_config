@@ -1,0 +1,16 @@
+# Nginx configuration to server /airbnb-onepage
+server {
+        listen 80;
+        listen [::]:80;
+
+        # Server information
+        server_name 18.204.13.162;
+        add_header X-Served-By $hostname;
+
+        # Config to seve /airbnb-onepage/
+        location /airbnb-onepage/ {
+                include proxy_params;
+                proxy_pass http://localhost:5000/airbnb-onepage;
+
+    }
+}
