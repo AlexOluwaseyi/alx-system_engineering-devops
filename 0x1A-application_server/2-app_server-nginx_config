@@ -1,7 +1,7 @@
 # Nginx configuration to server /airbnb-onepage
 server {
-        listen 80;
-        listen [::]:80;
+        listen 80 default_server;
+        listen [::]:80 default_server;
 
         # Server information
         server_name 18.204.13.162;
