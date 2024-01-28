@@ -12,12 +12,12 @@ server {
         # Config to serve /
         location / {
                 include proxy_params;
-                proxy_pass http://127.0.0.1:5003/;
+                proxy_pass http://127.0.0.1:5003/2-hbnb;
                 proxy_set_header X-Served-By $hostname;
 
                 # Uncomment the following line to serve static assets
-                # include /etc/nginx/mime.types;
-                # root /home/ubuntu/AirBnB_clone_v4/web_dynamic/static;
+                include /etc/nginx/mime.types;
+                root /home/ubuntu/AirBnB_clone_v4/web_dynamic/static;
         }
 
         # Config to seve /airbnb-onepage/
@@ -56,6 +56,6 @@ server {
         }
 
         location /static/ {
-                alias /home/ubuntu/AirBnB_clone_v4/web_dynamic/;
+                alias /home/ubuntu/AirBnB_clone_v4/web_dynamic/static/;
         }
 }
