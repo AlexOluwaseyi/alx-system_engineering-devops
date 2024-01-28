@@ -16,8 +16,8 @@ server {
                 proxy_set_header X-Served-By $hostname;
 
                 # Uncomment the following line to serve static assets
-                include /etc/nginx/mime.types;
-                root /home/ubuntu/AirBnB_clone_v4/web_dynamic/static;
+                # include /etc/nginx/mime.types;
+                # root /home/ubuntu/AirBnB_clone_v4/web_dynamic/static;
         }
 
         # Config to seve /airbnb-onepage/
