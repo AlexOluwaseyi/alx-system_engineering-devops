@@ -1,0 +1,61 @@
+# Nginx configuration to server /airbnb-onepage
+server {
+        listen 80 default_server;
+        listen [::]:80 default_server;
+
+        root /home/ubuntu/AirBnB_clone_v4/web_dynamic;
+
+        # Server information
+        server_name 18.204.13.162;
+        add_header X-Served-By $hostname;
+
+        # Config to serve /
+        location / {
+                include proxy_params;
+                proxy_pass http://127.0.0.1:5003/;
+                proxy_set_header X-Served-By $hostname;
+
+                # Uncomment the following line to serve static assets
+                include /etc/nginx/mime.types;
+                root /home/ubuntu/AirBnB_clone_v4/web_dynamic/static;
+        }
+
+        # Config to seve /airbnb-onepage/
+        location /airbnb-onepage/ {
+                include proxy_params;
+                proxy_pass http://127.0.0.1:5000/airbnb-onepage/;
+                proxy_set_header X-Served-By $hostname;
+        }
+
+        # Config to serve .airbnb-dynamic/number_odd_or_even/<int:n>
+        location ~ ^/airbnb-dynamic/number_odd_or_even/(?<n>\d+)$ {
+                include proxy_params;
+                proxy_pass http://127.0.0.1:5001/number_odd_or_even/$n;
+                proxy_set_header X-Served-By $hostname;
+        }
+
+        # Config to serve /number_odd_or_even/<int:n>
+        location ~ ^/number_odd_or_even/(?<n>\d+)$ {
+                include proxy_params;
+                proxy_pass http://127.0.0.1:5001/number_odd_or_even/$n;
+                proxy_set_header X-Served-By $hostname;
+        }
+
+        # Config to serve /number_odd_or_even/<int:n>
+        location /api {
+                include proxy_params;
+                proxy_pass http://127.0.0.1:5002/api;
+                proxy_set_header X-Served-By $hostname;
+        }
+
+        # Config to serve /number_odd_or_even/<int:n>
+        location /web_dynamic {
+                include proxy_params;
+                proxy_pass http://127.0.0.1:5003/web_dynamic;
+                proxy_set_header X-Served-By $hostname;
+        }
+
+        location /static/ {
+                alias /home/ubuntu/AirBnB_clone_v4/web_dynamic/static/;
+        }
+}
